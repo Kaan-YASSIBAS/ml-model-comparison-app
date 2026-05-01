@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Comparison App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <h1>ML Model Comparison App</h1>
+            <p class="subtitle">
+                Compare classical Machine Learning algorithms on a spam classification dataset.
+            </p>
+
+            <div class="form-group">
+                <label for="modelSelect">Select Algorithm</label>
+                <select id="modelSelect">
+                    <option value="logistic_regression">Logistic Regression</option>
+                    <option value="knn">K-Nearest Neighbors</option>
+                    <option value="decision_tree">Decision Tree</option>
+                    <option value="random_forest">Random Forest</option>
+                    <option value="linear_svm">Linear SVM</option>
+                    <option value="naive_bayes">Naive Bayes</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="evaluateButton">Run Evaluation</button>
+                <button id="compareButton" class="secondary">Compare All Models</button>
+            </div>
+
+            <div id="loading" class="loading hidden">Training and evaluating model...</div>
+            <div id="error" class="error hidden"></div>
+
+            <section id="singleResult" class="result-card hidden">
+                <h2>Model Result</h2>
+                <p><strong>Model:</strong> <span id="modelName"></span></p>
+
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <span>Accuracy</span>
+                        <strong id="accuracy"></strong>
+                    </div>
+                    <div class="metric">
+                        <span>Precision</span>
+                        <strong id="precision"></strong>
+                    </div>
+                    <div class="metric">
+                        <span>Recall</span>
+                        <strong id="recall"></strong>
+                    </div>
+                    <div class="metric">
+                        <span>F1 Score</span>
+                        <strong id="f1Score"></strong>
+                    </div>
+                </div>
+
+                <h3>Confusion Matrix</h3>
+                <table class="matrix-table">
+                    <tr>
+                        <th></th>
+                        <th>Predicted Ham</th>
+                        <th>Predicted Spam</th>
+                    </tr>
+                    <tr>
+                        <th>Actual Ham</th>
+                        <td id="cm00"></td>
+                        <td id="cm01"></td>
+                    </tr>
+                    <tr>
+                        <th>Actual Spam</th>
+                        <td id="cm10"></td>
+                        <td id="cm11"></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="comparisonResult" class="result-card hidden">
+                <h2>Model Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody"></tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
