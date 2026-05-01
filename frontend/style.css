@@ -191,3 +191,59 @@ button.secondary:hover {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.home-card {
+    max-width: 980px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 32px;
+}
+
+.nav-card {
+    display: block;
+    padding: 26px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #1f2937;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.nav-card h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.nav-card p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+}

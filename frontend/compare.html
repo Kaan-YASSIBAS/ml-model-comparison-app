@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare All Models</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <h1>Compare All Models</h1>
+            <p class="subtitle">
+                Compare all classical Machine Learning algorithms using accuracy, precision, recall, and F1 score.
+            </p>
+
+            <button id="compareButton" class="secondary">Compare All Models</button>
+
+            <div id="loading" class="loading hidden">Training and comparing all models...</div>
+            <div id="error" class="error hidden"></div>
+
+            <section id="comparisonResult" class="result-card hidden">
+                <h2>Model Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody"></tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+
+    <script src="compare.js"></script>
+</body>
+</html>
